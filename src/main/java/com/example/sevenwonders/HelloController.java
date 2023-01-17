@@ -8,7 +8,10 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.w3c.dom.events.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,17 +24,38 @@ public class HelloController {
     private Slider sliderplayernumber;
 
     @FXML
+    private Text labelplayer;
+
+    @FXML
+    private TextField playername;
+
+    @FXML
     private ChoiceBox<String> selectwonderone;
     private String[] wonders = {"Alexandrie","Babylone","Ephese","Gizeh","Halicarnasse","Olympie","Rhodes"};
 
+    /*@FXML
+    void importwonders(MouseEvent event) {
+
+        selectwonderone.getItems().addAll(wonders);
+
+    }*/
+
     public static int nbjoueurs;
 
-    @FXML
+    /*@FXML
     public void initialize() {
         Game.option.startNewGame();
+    }*/
+
+
+    @FXML
+    void onnextaction(ActionEvent event) {
+
+        //labelplayer.setText(selectwonderone.getValue());
+        System.out.println(selectwonderone.getValue());
+        System.out.println(playername.getText());
+
     }
-
-
 
 
     public void startgame(ActionEvent event) {
@@ -52,6 +76,7 @@ public class HelloController {
     public void numberchose(ActionEvent event) throws IOException {
 
         nbjoueurs = (int) sliderplayernumber.getValue();
+        System.out.println(nbjoueurs);
 
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("decidewonder.fxml"));
@@ -62,10 +87,16 @@ public class HelloController {
             ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+    public void importwonders(javafx.scene.input.MouseEvent mouseEvent) {
 
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+        selectwonderone.getItems().setAll(wonders);
+
+    }
+
+
+    /*public void initialize(URL url, ResourceBundle resourceBundle) {
 
         selectwonderone.getItems().addAll(wonders);
 
-    }
+    }*/
 }

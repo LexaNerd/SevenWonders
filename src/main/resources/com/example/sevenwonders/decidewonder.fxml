@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -14,10 +15,11 @@
             <Image url="@../../../images/7-wonders-of-ancient-world-lighthouse-of-alexandria-gettyimages-89175409.jpg" />
          </image>
       </ImageView>
-      <TextField layoutX="367.0" layoutY="85.0" />
+      <TextField fx:id="playername" layoutX="367.0" layoutY="85.0" />
       <Text layoutX="390.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quel est ton nom ?" />
-      <Text layoutX="416.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 1 :" />
+      <Text fx:id="lableplayer" layoutX="416.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 1 :" />
       <Text layoutX="371.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisissez votre merveille :" />
-      <ChoiceBox fx:id="selectwonderone" layoutX="367.0" layoutY="225.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="selectwonderone" layoutX="367.0" layoutY="225.0" onMouseClicked="#importwonders" prefWidth="150.0" />
+      <Button layoutX="415.0" layoutY="293.0" mnemonicParsing="false" onAction="#onnextaction" text="Suivant" />
    </children>
 </AnchorPane>
