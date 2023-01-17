@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sevenwonders.HelloController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../../images/7-wonders-of-ancient-world-lighthouse-of-alexandria-gettyimages-89175409.jpg" />
+         </image>
+      </ImageView>
+      <TextField layoutX="367.0" layoutY="85.0" />
+      <Text layoutX="390.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quel est ton nom ?" />
+      <Text layoutX="416.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 1 :" />
+      <Text layoutX="371.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisissez votre merveille :" />
+      <ChoiceBox fx:id="selectwonderone" layoutX="367.0" layoutY="225.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
