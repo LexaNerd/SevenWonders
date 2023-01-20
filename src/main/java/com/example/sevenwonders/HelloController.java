@@ -15,6 +15,7 @@ import org.w3c.dom.events.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -32,6 +33,7 @@ public class HelloController {
     @FXML
     private ChoiceBox<String> selectwonderone;
     private String[] wonders = {"Alexandrie","Babylone","Ephese","Gizeh","Halicarnasse","Olympie","Rhodes"};
+    public ArrayList<Playerz> playerList;
 
     /*@FXML
     void importwonders(MouseEvent event) {
@@ -50,10 +52,34 @@ public class HelloController {
 
     @FXML
     void onnextaction(ActionEvent event) {
-
-        //labelplayer.setText(selectwonderone.getValue());
-        System.out.println(selectwonderone.getValue());
-        System.out.println(playername.getText());
+        if(nbjoueurs==1){
+            //Load prochaine scene
+        }else{
+            Wonder wonder = null;
+            switch(selectwonderone.getValue()){
+                case "Alexandrie":
+                    wonder = Wonder.Alexandrie;
+                case "Babylone":
+                    wonder = Wonder.Babylone;
+                case "Ephese":
+                    wonder = Wonder.Ephese;
+                case "Gizeh":
+                    wonder = Wonder.Gizeh;
+                case "Halicarnasse":
+                    wonder = Wonder.Halicarnasse;
+                case "Olympie":
+                    wonder = Wonder.Olympie;
+                case "Rhodes":
+                    wonder = Wonder.Rhodes;
+            }
+            Playerz playerz = new Playerz(playername.getText(),wonder);
+            playerList.add(playerz);
+            System.out.println(selectwonderone.getValue());
+            System.out.println(playername.getText());
+            nbjoueurs--;
+            System.out.println(nbjoueurs);
+            System.out.println(playerList);
+        }
 
     }
 
