@@ -2,9 +2,9 @@ package com.example.sevenwonders.Cards;
 
 
 import com.example.sevenwonders.Wonder;
-import lombok.Getter;
+//import lombok.Getter;
 
-@Getter
+//@Getter
 public enum CardBack {
 
     CentralDeck(null), //

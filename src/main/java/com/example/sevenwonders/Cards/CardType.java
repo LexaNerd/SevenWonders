@@ -2,9 +2,9 @@ package com.example.sevenwonders.Cards;
 
 import com.example.sevenwonders.Material;
 import com.example.sevenwonders.ScienceCategory;
-import lombok.Getter;
+//import lombok.Getter;
 
-@Getter
+//@Getter
 /**
  * type of cards
  */

@@ -33,7 +33,7 @@ public class HelloController {
     @FXML
     private ChoiceBox<String> selectwonderone;
     private String[] wonders = {"Alexandrie","Babylone","Ephese","Gizeh","Halicarnasse","Olympie","Rhodes"};
-    public ArrayList<Playerz> playerList;
+    public ArrayList<Playerz> playerList = new ArrayList<Playerz>();
 
     /*@FXML
     void importwonders(MouseEvent event) {
@@ -88,7 +88,7 @@ public class HelloController {
         try {
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("numberplayer.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             stage.setTitle("selectnumberplayer");
             stage.setScene(scene);
             stage.show();
@@ -106,7 +106,7 @@ public class HelloController {
 
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("decidewonder.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             stage.setTitle("selectwonder");
             stage.setScene(scene);
             stage.show();

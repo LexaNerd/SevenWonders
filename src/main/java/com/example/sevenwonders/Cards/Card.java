@@ -1,9 +1,9 @@
 package com.example.sevenwonders.Cards;
 
 
-import lombok.Data;
+//import lombok.Data;
 
-@Data
+//@Data
 
 public class Card {
 

@@ -1,11 +1,11 @@
 package com.example.sevenwonders.Cards;
 
-import lombok.Data;
+//import lombok.Data;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Data
+//@Data
 
 public class CardDecks {
 

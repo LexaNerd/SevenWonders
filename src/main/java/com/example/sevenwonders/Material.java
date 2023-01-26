@@ -1,8 +1,8 @@
 package com.example.sevenwonders;
 
-import lombok.Getter;
+//import lombok.Getter;
 
-@Getter
+//@Getter
 
 public enum Material {
     Wood, //

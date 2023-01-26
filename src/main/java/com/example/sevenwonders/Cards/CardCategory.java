@@ -1,9 +1,9 @@
 package com.example.sevenwonders.Cards;
 
 
-import lombok.Getter;
+//import lombok.Getter;
 
-@Getter
+//@Getter
 public enum CardCategory {
 
     MaterialCard,

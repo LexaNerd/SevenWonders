@@ -9,7 +9,7 @@ module com.example.sevenwonders {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
     requires com.google.common;
-    requires lombok;
+    //requires lombok;
 
 
     opens com.example.sevenwonders to javafx.fxml;
