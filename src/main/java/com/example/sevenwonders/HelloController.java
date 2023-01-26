@@ -53,7 +53,31 @@ public class HelloController {
     @FXML
     void onnextaction(ActionEvent event) {
         if(nbjoueurs==1){
-            //Load prochaine scene
+            Wonder wonder = null;
+            switch(selectwonderone.getValue()){
+                case "Alexandrie":
+                    wonder = Wonder.Alexandrie;
+                case "Babylone":
+                    wonder = Wonder.Babylone;
+                case "Ephese":
+                    wonder = Wonder.Ephese;
+                case "Gizeh":
+                    wonder = Wonder.Gizeh;
+                case "Halicarnasse":
+                    wonder = Wonder.Halicarnasse;
+                case "Olympie":
+                    wonder = Wonder.Olympie;
+                case "Rhodes":
+                    wonder = Wonder.Rhodes;
+            }
+            Playerz playerz = new Playerz(playername.getText(),wonder);
+            playerList.add(playerz);
+            System.out.println(selectwonderone.getValue());
+            System.out.println(playername.getText());
+            nbjoueurs--;
+            System.out.println(nbjoueurs);
+            System.out.println(playerList);
+            //load scene
         }else{
             Wonder wonder = null;
             switch(selectwonderone.getValue()){
