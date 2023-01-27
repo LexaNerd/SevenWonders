@@ -7,9 +7,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.w3c.dom.events.MouseEvent;
@@ -20,7 +23,13 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
-public class HelloController {
+public class HelloController implements Initializable{
+
+    @FXML private Button nextCardButton;
+    @FXML private ImageView deckimageView;
+    @FXML private ImageView activeCardimageView;
+    private DeckOfCards deck;
+    private Card cards;
 
     @FXML
     private Slider sliderplayernumber;
@@ -49,6 +58,25 @@ public class HelloController {
     public void initialize() {
         Game.option.startNewGame();
     }*/
+
+
+        /* initialisation du deck de carte et attribution d'une image pour le dos des cartes de la pioche sur l'interface*/
+
+        @Override
+        public void initialize(URL location, ResourceBundle resources) {
+            deck = new DeckOfCards();
+            //System.out.println(deck.getDeck().get(0).getColor()+" " + deck.getDeck().get(0).getFaceName());
+            //deckimageView.setImage(deck.getBackOfCardImage());
+        }
+
+    @FXML
+    public void nextCardButtonPushed()
+    {
+        System.out.println(deck.getDeck().get(0).getColor()+" " + deck.getDeck().get(0).getFaceName());
+        deck.dealTopCard();
+        Card card = new Card(deck.getDeck().get(0).getFaceName(),deck.getDeck().get(0).getColor());
+        activeCardimageView.setImage(card.getImage());
+    }
 
     /*
     onnextaction est le bouton de la page du choix de merveille qui va enregistrer le nom du joueur et sa merveille,
@@ -167,19 +195,6 @@ public class HelloController {
 
     }
 
-    /*
-    Cette fonction a pour but de faire fonctionner la pioche
-
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("deckView.fxml"));
-        Scene scene = new Scene(root);
-
-
-        primaryStage.setTitle("Deck Of Cards");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-     */
 
 
     /*public void initialize(URL url, ResourceBundle resourceBundle) {
