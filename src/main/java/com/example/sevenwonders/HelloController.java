@@ -49,7 +49,10 @@ public class HelloController {
         Game.option.startNewGame();
     }*/
 
-
+    /*
+    onnextaction est le bouton de la page du choix de merveille qui va enregistrer le nom du joueur et sa merveille,
+    la fonction va aussi stocker la liste des joueurs et va permettre de charger la scène du plateau à la fin.
+     */
     @FXML
     void onnextaction(ActionEvent event) {
         if(nbjoueurs==1){
@@ -107,7 +110,9 @@ public class HelloController {
 
     }
 
-
+    /*
+    fonction startgame permet de passer à la page de choix du nombre de joueurs
+     */
     public void startgame(ActionEvent event) {
         try {
             Stage stage = new Stage();
@@ -123,6 +128,10 @@ public class HelloController {
         }
     }
 
+    /*
+    La fonction numberchose permet de charger la page pour choisir son nom et sa merveille, elle
+    permet aussi de prendre en compte le nombre de joueur et de stocker cette variable.
+     */
     public void numberchose(ActionEvent event) throws IOException {
 
         nbjoueurs = (int) sliderplayernumber.getValue();
@@ -137,6 +146,9 @@ public class HelloController {
             ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+    /*
+    enregistre les wonders
+     */
     public void importwonders(javafx.scene.input.MouseEvent mouseEvent) {
 
         selectwonderone.getItems().setAll(wonders);
