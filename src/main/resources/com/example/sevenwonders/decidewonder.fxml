@@ -17,7 +17,7 @@
       </ImageView>
       <TextField fx:id="playername" layoutX="367.0" layoutY="85.0" />
       <Text layoutX="390.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quel est ton nom ?" />
-      <Text fx:id="lableplayer" layoutX="416.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 1 :" />
+      <Text fx:id="lableplayer" layoutX="416.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur :" />
       <Text layoutX="371.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisissez votre merveille :" />
       <ChoiceBox fx:id="selectwonderone" layoutX="367.0" layoutY="225.0" onMouseClicked="#importwonders" prefWidth="150.0" />
       <Button layoutX="415.0" layoutY="293.0" mnemonicParsing="false" onAction="#onnextaction" text="Suivant" />

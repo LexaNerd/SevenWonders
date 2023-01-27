@@ -52,9 +52,10 @@ public class HelloController {
     /*
     onnextaction est le bouton de la page du choix de merveille qui va enregistrer le nom du joueur et sa merveille,
     la fonction va aussi stocker la liste des joueurs et va permettre de charger la scène du plateau à la fin.
+    Il va aussi vider le textfield et le choix de la merveille entre deux sélections de joueurs
      */
     @FXML
-    void onnextaction(ActionEvent event) {
+    void onnextaction(ActionEvent event) throws IOException {
         if(nbjoueurs==1){
             Wonder wonder = null;
             switch(selectwonderone.getValue()){
@@ -80,7 +81,13 @@ public class HelloController {
             nbjoueurs--;
             System.out.println(nbjoueurs);
             System.out.println(playerList);
-            //load scene
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("plateau.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
+            stage.setTitle("plateaudejeu");
+            stage.setScene(scene);
+            stage.show();
+            ((Node) (event.getSource())).getScene().getWindow().hide();
         }else{
             Wonder wonder = null;
             switch(selectwonderone.getValue()){
@@ -106,6 +113,8 @@ public class HelloController {
             nbjoueurs--;
             System.out.println(nbjoueurs);
             System.out.println(playerList);
+            playername.setText("");
+            selectwonderone.setValue(null);
         }
 
     }
@@ -114,6 +123,7 @@ public class HelloController {
     fonction startgame permet de passer à la page de choix du nombre de joueurs
      */
     public void startgame(ActionEvent event) {
+
         try {
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("numberplayer.fxml"));
@@ -133,6 +143,7 @@ public class HelloController {
     permet aussi de prendre en compte le nombre de joueur et de stocker cette variable.
      */
     public void numberchose(ActionEvent event) throws IOException {
+
 
         nbjoueurs = (int) sliderplayernumber.getValue();
         System.out.println(nbjoueurs);
